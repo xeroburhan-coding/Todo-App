@@ -38,7 +38,7 @@ const App = () => {
   };
 
   const onDone = (title) => {
-    if (todos.includes(title)) {
+    if (doneTodos.includes(title)) {
       alert("This todo already Done");
     } else {
       setDoneTodos((preDoneTodos) => [...preDoneTodos, title]);
