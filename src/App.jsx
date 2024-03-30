@@ -9,7 +9,6 @@ const App = () => {
   const [todos, setTodos] = useState([]);
   const [doneTodos, setDoneTodos] = useState([]);
 
-
   const handleOnChange = (event) => {
     event.preventDefault();
     setInput(event.target.value);
@@ -39,7 +38,11 @@ const App = () => {
   };
 
   const onDone = (title) => {
-    setDoneTodos((preDoneTodos) => [...preDoneTodos, title]);
+    if (todos.includes(title)) {
+      alert("This todo already Done");
+    } else {
+      setDoneTodos((preDoneTodos) => [...preDoneTodos, title]);
+    }
   };
 
   return (
